@@ -1,0 +1,38 @@
+{
+  "index": {
+    "prefix": "index",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import { tableConfig } from './const'",
+      "import Search from './components/Search.vue'",
+      "import Edit from './components/Edit.vue'",
+      "import { list } from './api'",
+      "import { listProcess } from './util'",
+      "import useList from '@/hook/useList'",
+      "",
+      "const { state, pagination, op, reset } = useList({",
+      "  tableConfig,",
+      "  listProcess,",
+      "  api: {",
+      "    list,",
+      "  },",
+      "  searchOption: {},",
+      "})",
+      "</script>",
+      "",
+      "<template>",
+      "  <div class=\"dash-container\">",
+      "    <div class=\"dash-card\">",
+      "      <Search @op=\"op\"></Search>",
+      "    </div>",
+      "    <div class=\"dash-card mt-24\">",
+      "      <List :table=\"state.table\" :page=\"state.page\" @op=\"op\" @pagination=\"pagination\"></List>",
+      "      <Edit :flag=\"state.flag\" :row-info=\"state.rowInfo\" @reset=\"reset\"></Edit>",
+      "    </div>",
+      "  </div>",
+      "</template>",
+      ""
+    ],
+    "description": "list index temp"
+  }
+}

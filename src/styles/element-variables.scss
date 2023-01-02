@@ -1,0 +1,37 @@
+// /* 改变主题色变量 */
+$--color-primary: #5272e8;
+$--color-success: #3fcad6;
+$--color-warning: #ff9f24;
+$--color-danger: #f77965;
+$--color-info: #a5b6c6;
+$--el-table-header-bg-color: $--color-primary;
+
+$--table-header: #93a8ff;
+
+// /* 改变 icon 字体路径变量，必需 */
+// $--font-path: '@/assets/fonts';
+
+// @import 'node_modules/element-plus/packages/theme-chalk/src/index';
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #5272e8
+    ),
+    'success': (
+      'base': #3fcad6
+    ),
+    'warning': (
+      'base': #ff9f24
+    ),
+    'danger': (
+      'base': #f77965
+    ),
+    'info': (
+      'base': #a5b6c6
+    ),
+    'header': (
+      'base': #93a8ff
+    ),
+  ),
+);

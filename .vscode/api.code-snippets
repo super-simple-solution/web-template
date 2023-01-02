@@ -1,0 +1,28 @@
+{
+  "api": {
+    "prefix": "api",
+    "body": [
+      "import request from '@/utils/request'",
+      "",
+      "const path = {",
+      "  list: '{}/list',",
+      "  create: '{}/add',",
+      "  update: '{}/update',",
+      "}",
+      "",
+      "export function list(...paramsRest: any[]): Promise<any> {",
+      "  return request.post(path.list, ...paramsRest)",
+      "}",
+      "",
+      "export function create(...paramsRest: any[]): Promise<any> {",
+      "  return request.post(path.create, ...paramsRest)",
+      "}",
+      "",
+      "export function update(...paramsRest: any[]): Promise<any> {",
+      "  return request.post(path.update, ...paramsRest)",
+      "}",
+      ""
+    ],
+    "description": "api temp"
+  }
+}

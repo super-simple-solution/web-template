@@ -1,0 +1,43 @@
+{
+  "Search Component": {
+    "prefix": "search",
+    "body": [
+      "<script lang=\"ts\" setup>",
+      "import { defineEmits } from 'vue'",
+      "import useSearch from '@/hook/useSearch'",
+      "const emit = defineEmits(['op'])",
+      "",
+      "const { toSearch, state, op } = useSearch({",
+      "  defaultForm: {",
+      "    name: '',",
+      "  },",
+      "  emit,",
+      "})",
+      "</script>",
+      "",
+      "<template>",
+      "  <div class=\"flex\">",
+      "    <el-form inline class=\"search-form\">",
+      "      <el-form-item>",
+      "        <el-input v-model=\"state.form.name\" placeholder=\"搜索\" clearable class=\"w-300\" />",
+      "      </el-form-item>",
+      "      <el-form-item>",
+      "        <el-button @click=\"toSearch\">查询</el-button>",
+      "      </el-form-item>",
+      "    </el-form>",
+      "    <el-button",
+      "      type=\"primary\"",
+      "      @click=\"",
+      "        op({",
+      "          name: 'selectUser',",
+      "        })",
+      "      \"",
+      "      >添加</el-button",
+      "    >",
+      "  </div>",
+      "</template>",
+      ""
+    ],
+    "description": ""
+  }
+}

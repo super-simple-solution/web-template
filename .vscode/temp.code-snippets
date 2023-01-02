@@ -1,0 +1,22 @@
+{
+  "search list": {
+    "prefix": "search-list",
+    "body": [
+      "<Search @op=\"op\"></Search>",
+      "<List :table=\"table\" :page=\"page\" @op=\"op\" @pagination=\"pagination\"></List>"
+    ],
+    "description": "search list template"
+  },
+  "listProcess": {
+    "prefix": "listProcess",
+    "body": [
+      "export function listProcess(list, option) {",
+      "  let { deptMap } = option",
+      "  list.forEach((item) => {",
+      "    item.dept_id_text = deptMap[item.dept_id]?.dept_name",
+      "  })",
+      "}"
+    ],
+    "description": "listProcess"
+  }
+}
