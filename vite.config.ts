@@ -15,8 +15,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 const pathUrl = 'https://xxx.com'
 
 export default defineConfig({
-  base: '/leaps/',
-  publicDir: '/leaps',
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, './src')}/`,

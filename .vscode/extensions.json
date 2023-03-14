@@ -1,3 +1,10 @@
 {
-  "recommendations": ["Vue.volar"],
+  "recommendations": [
+    "Vue.volar",
+     "jingwang37.element-plus-snippets",
+     "esbenp.prettier-vscode",
+     "dbaeumer.vscode-eslint",
+     "rvest.vs-code-prettier-eslint",
+     "bradlc.vscode-tailwindcss"
+    ],
 }
