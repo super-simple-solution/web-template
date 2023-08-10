@@ -1,14 +1,18 @@
-import axios, { AxiosRequestConfig, CustomSuccessData, AxiosResponse } from 'axios'
+import axios, { AxiosRequestConfig, AxiosRequestHeaders, CustomSuccessData, AxiosResponse } from 'axios'
 import { IResponseData } from '@/types/axios'
 import { ElMessage, ElLoading } from 'element-plus'
 import { toLogin, getToken } from '@/utils/auth'
 import { noNeedLogin } from '@/utils'
 
+interface AdaptAxiosRequestConfig extends AxiosRequestConfig {
+  headers: AxiosRequestHeaders
+}
+
 const isPro = import.meta.env.PROD
 const CancelToken = axios.CancelToken
 
 const service = axios.create({
-  baseURL: isPro ? `${location.protocol}//${location.host}__domain_awesomed__` : '/api',
+  baseURL: isPro ? `${location.protocol}//${location.host}` : '/api',
   timeout: 30000,
 })
 
@@ -43,24 +47,13 @@ function cancelGene(config: AxiosRequestConfig, message: string) {
 
 // request interceptor
 service.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: AdaptAxiosRequestConfig) => {
     if (config.el) {
       startLoading(config.el, config.text)
     }
-    const is_get = config.method === 'get'
-    if (is_get) {
-      config.headers = {
-        'Content-Type': 'application/json',
-      }
-      // https://github.com/axios/axios/issues/86
-      config.data = null
-    }
     const token = getToken()
     if (token) {
-      config.headers = {
-        ...config.headers,
-        Authorization: token,
-      }
+      config.headers.Authorization = token
     } else if (!noNeedLogin()) {
       // 未登录
       location.href = location.href.replace(/#.+/, '') + '#/login'
