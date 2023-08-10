@@ -1,4 +1,3 @@
-import 'virtual:svg-icons-register'
 import Adaptive from '@/directive/el-table/adaptive'
 import { App } from 'vue'
 export default function performLoader(app: App<Element>) {

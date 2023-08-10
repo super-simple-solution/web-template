@@ -20,7 +20,6 @@ declare module '@vue/runtime-core' {
     Pagination: typeof import('./src/components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
     TableBase: typeof import('./src/components/TableBase/index.vue')['default']
     UploadFile: typeof import('./src/components/UploadFile/index.vue')['default']
     UploadHelper: typeof import('./src/components/UploadFile/uploadHelper.vue')['default']

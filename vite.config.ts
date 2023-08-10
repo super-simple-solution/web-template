@@ -6,7 +6,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import svgLoader from 'vite-svg-loader'
 import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 import eslintPlugin from 'vite-plugin-eslint'
@@ -38,18 +38,13 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    svgLoader(),
     Components({
       dts: true,
       dirs: ['src/components'],
       resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver({ enabledCollections: ['ep'] })],
     }),
     Icons({ autoInstall: true }),
-    createSvgIconsPlugin({
-      // Specify the icon folder to be cached
-      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
-      // Specify symbolId format
-      symbolId: 'icon-[dir]-[name]',
-    }),
     eslintPlugin(),
     AutoImport({
       // targets to transform

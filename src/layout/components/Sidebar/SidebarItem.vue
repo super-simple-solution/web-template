@@ -28,7 +28,6 @@
 
 <script>
 import path from 'path-browserify'
-import { defineComponent } from 'vue'
 import { isExternal } from '@/utils/validate'
 import AppLink from './Link.vue'
 import { useChildRouteStore } from '@/store/childRoute'
