@@ -123,6 +123,7 @@ export default function useEdit(option: Option) {
     cancel,
     deleteImage,
     afterUpload,
+    defaultRule,
   }
 }
 
