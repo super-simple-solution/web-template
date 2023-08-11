@@ -16,7 +16,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { PropType, defineEmits, defineProps } from 'vue'
+import { PropType } from 'vue'
 
 defineEmits(['delete'])
 defineProps({

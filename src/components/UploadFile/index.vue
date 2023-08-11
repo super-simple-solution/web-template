@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { uploadFile } from '@/api/upload'
-import { PropType, defineProps, defineEmits } from 'vue'
+import { PropType } from 'vue'
 import type { UploadProps } from 'element-plus'
 import { ElMessage } from 'element-plus'
 type SizeType = '' | 'small' | 'large' | 'medium' | 'mini'

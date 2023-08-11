@@ -3,7 +3,6 @@
     "prefix": "edit",
     "body": [
       "<script lang=\"ts\" setup>",
-      "import { defineEmits, defineProps } from 'vue'",
       "import { labelMap, rules, Type } from '../const'",
       "import useEdit from '@/hook/useEdit'",
       "import { formInit } from '../util'",

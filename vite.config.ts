@@ -9,8 +9,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import svgLoader from 'vite-svg-loader'
 import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
-import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import checker from 'vite-plugin-checker'
 
 const pathUrl = 'https://xxx.com'
 
@@ -36,6 +36,12 @@ export default defineConfig({
     },
   },
   plugins: [
+    checker({
+      eslint: {
+        // for example, lint .ts and .tsx
+        lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"',
+      },
+    }),
     vue(),
     vueJsx(),
     svgLoader(),
@@ -45,7 +51,6 @@ export default defineConfig({
       resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver({ enabledCollections: ['ep'] })],
     }),
     Icons({ autoInstall: true }),
-    eslintPlugin(),
     AutoImport({
       // targets to transform
       include: [

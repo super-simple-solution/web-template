@@ -23,7 +23,7 @@ export const useTagsViewStore = defineStore('tagsView', {
       this.cachedViews = []
     },
     addVisitedView(view: TagView) {
-      if (this.visitedViews.some((v) => v.path === view.path)) return
+      if (this.visitedViews.some((v: any) => v.path === view.path)) return
       this.visitedViews.push(
         Object.assign({}, view, {
           title: view.meta.title || 'no-name',
@@ -56,7 +56,7 @@ export const useTagsViewStore = defineStore('tagsView', {
     },
 
     delOthersVisitedViews(view: TagView) {
-      this.visitedViews = this.visitedViews.filter((v) => {
+      this.visitedViews = this.visitedViews.filter((v: any) => {
         return v.meta.affix || v.path === view.path
       })
     },
@@ -72,7 +72,7 @@ export const useTagsViewStore = defineStore('tagsView', {
 
     delAllVisitedViews() {
       // keep affix tags
-      const affixTags = this.visitedViews.filter((tag) => tag.meta.affix)
+      const affixTags = this.visitedViews.filter((tag: any) => tag.meta.affix)
       this.visitedViews = affixTags
     },
     delAllCachedViews() {

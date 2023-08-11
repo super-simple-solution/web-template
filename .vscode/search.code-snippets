@@ -3,7 +3,6 @@
     "prefix": "search",
     "body": [
       "<script lang=\"ts\" setup>",
-      "import { defineEmits } from 'vue'",
       "import useSearch from '@/hook/useSearch'",
       "const emit = defineEmits(['op'])",
       "",

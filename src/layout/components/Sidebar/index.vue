@@ -23,8 +23,10 @@
 
 <script>
 import SidebarItem from './SidebarItem.vue'
-import variables from '@/styles/variables.scss'
+import variables from '@/styles/variables.scss?inline'
 import { parseScssVariable } from '@/utils'
+
+console.log(variables, 'variables')
 
 export default {
   name: 'Sidebar',
